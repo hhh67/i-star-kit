@@ -4,7 +4,13 @@
 import SwiftUI
 
 public struct iSKBlur: UIViewRepresentable {
-    var style: UIBlurEffect.Style
+    let style: UIBlurEffect.Style
+
+    public init(
+        style: UIBlurEffect.Style
+    ) {
+        self.style = style
+    }
 
     public func makeUIView(context: Context) -> UIVisualEffectView {
         UIVisualEffectView(effect: UIBlurEffect(style: style))
