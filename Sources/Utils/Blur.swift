@@ -7,7 +7,7 @@ public struct iSKBlur: UIViewRepresentable {
     let style: UIBlurEffect.Style
 
     public init(
-        style: UIBlurEffect.Style
+        _ style: UIBlurEffect.Style
     ) {
         self.style = style
     }
