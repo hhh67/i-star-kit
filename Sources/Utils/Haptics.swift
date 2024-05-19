@@ -3,19 +3,21 @@
 
 import UIKit
 
-public func playImpactHaptic(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
-    let generator = UIImpactFeedbackGenerator(style: style)
-    generator.impactOccurred()
-}
+public class Haptics {
+    static func playImpactHaptic(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
+        let generator = UIImpactFeedbackGenerator(style: style)
+        generator.impactOccurred()
+    }
 
-public func playNotificationHaptic(_ type: UINotificationFeedbackGenerator.FeedbackType) {
-    let generator = UINotificationFeedbackGenerator()
-    generator.notificationOccurred(type)
-}
+    static func playNotificationHaptic(_ type: UINotificationFeedbackGenerator.FeedbackType) {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(type)
+    }
 
-public func playSelectionHaptic() {
-    let generator = UISelectionFeedbackGenerator()
-    generator.selectionChanged()
+    static func playSelectionHaptic() {
+        let generator = UISelectionFeedbackGenerator()
+        generator.selectionChanged()
+    }
 }
 
 public enum Haptics {
