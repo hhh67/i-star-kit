@@ -3,7 +3,7 @@
 
 import UIKit
 
-public class Haptics {
+public class iSKHaptics {
     static func playImpactHaptic(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
         let generator = UIImpactFeedbackGenerator(style: style)
         generator.impactOccurred()
