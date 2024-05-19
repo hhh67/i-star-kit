@@ -76,17 +76,17 @@ private struct FlashMessageView: View {
     
     var body: some View {
         VStack(alignment: .center) {
+            Spacer()
             Image(systemName: imageSystemName)
                 .font(.system(size: 36, weight: .medium))
                 .foregroundStyle(imageColor)
-            Spacer()
+                .padding(.bottom, height * 0.1)
             Text(message)
                 .font(.system(size: fontSize, weight: .regular))
                 .multilineTextAlignment(.center)
                 .foregroundStyle(messageColor)
+            Spacer()
         }
-        .padding(.top, 44)
-        .padding(.bottom, 20)
         .frame(width: width, height: height)
         .background(Blur(style: .systemUltraThinMaterial))
         .cornerRadius(10)
