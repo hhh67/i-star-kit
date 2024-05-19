@@ -4,22 +4,31 @@
 import Foundation
 
 public extension Date {
+    /**
+     Yesterday at the same time as self
+     */
     var yesterday: Date {
         Calendar.current.date(byAdding: .day, value: -1, to: self)!
     }
 
+    /**
+     Tomorrow at the same time as self
+     */
     var tomorrow: Date {
         Calendar.current.date(byAdding: .day, value: 1, to: self)!
     }
     
     /**
-        UnixTime up to 1/100th of a second
+     UnixTime up to 1/100th of a second
      */
     func toHundredthsOfUnixTime() -> Double {
         let timeInterval = self.timeIntervalSince1970
         return floor(timeInterval * 100) / 100
     }
     
+    /**
+     Date to String with custom format
+     */
     func toString(
         _ format: String,
         _ locale: Locale = .japan,
@@ -37,6 +46,9 @@ public extension Date {
 
 
 public extension Date {
+    /**
+     yyyy to Int
+     */
     func yearInt(
         _ locale: Locale = .japan,
         _ timezone: TimeZone = .japan
@@ -48,6 +60,9 @@ public extension Date {
         return Int(formatter.string(from: self)) ?? 0
     }
     
+    /**
+     MM to Int
+     */
     func monthInt(
         _ locale: Locale = .japan,
         _ timezone: TimeZone = .japan
@@ -59,6 +74,9 @@ public extension Date {
         return Int(formatter.string(from: self)) ?? 0
     }
     
+    /**
+     dd to Int
+     */
     func dateInt(
         _ locale: Locale = .japan,
         _ timezone: TimeZone = .japan
@@ -70,6 +88,9 @@ public extension Date {
         return Int(formatter.string(from: self)) ?? 0
     }
     
+    /**
+     first date of this year
+     */
     func newYearsDate(
         _ locale: Locale = .japan,
         _ timezone: TimeZone = .japan
