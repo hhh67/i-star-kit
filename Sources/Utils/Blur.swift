@@ -3,7 +3,7 @@
 
 import SwiftUI
 
-public struct Blur: UIViewRepresentable {
+public struct iSKBlur: UIViewRepresentable {
     var style: UIBlurEffect.Style
 
     public func makeUIView(context: Context) -> UIVisualEffectView {

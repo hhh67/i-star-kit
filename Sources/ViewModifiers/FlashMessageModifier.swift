@@ -4,7 +4,7 @@
 import SwiftUI
 import Combine
 
-public struct FlashMessageModifier: ViewModifier {
+public struct iSKFlashMessageModifier: ViewModifier {
     @Binding var isShow: Bool
     let fontSize: CGFloat
     let width: CGFloat
@@ -88,11 +88,11 @@ private struct FlashMessageView: View {
             Spacer()
         }
         .frame(width: width, height: height)
-        .background(Blur(style: .systemUltraThinMaterial))
+        .background(iSKBlur(style: .systemUltraThinMaterial))
         .cornerRadius(10)
         .opacity(messageOpacity)
         .onAppear {
-            playNotificationHaptic(.success)
+            iSKHaptics.playNotificationHaptic(.success)
             withAnimation(.easeInOut(duration: 0.25)) {
                 messageOpacity = 1.0
             }
