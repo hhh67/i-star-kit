@@ -88,7 +88,7 @@ private struct FlashMessageView: View {
             Spacer()
         }
         .frame(width: width, height: height)
-        .background(iSKBlur(style: .systemUltraThinMaterial))
+        .background(iSKBlur(.systemUltraThinMaterial))
         .cornerRadius(10)
         .opacity(messageOpacity)
         .onAppear {
