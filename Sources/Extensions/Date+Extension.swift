@@ -42,6 +42,15 @@ public extension Date {
 
         return formatter.string(from: self)
     }
+    
+    /**
+     get yyyy-MM-dd 00:00:00
+     */
+    func onlyDate() -> Date {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: self)
+        let date = Calendar.current.date(from: components)
+        return date!
+    }
 }
 
 
