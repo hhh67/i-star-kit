@@ -6,14 +6,36 @@ import Combine
 
 public struct FlashMessageModifier: ViewModifier {
     @Binding var isShow: Bool
-    let fontSize: CGFloat = 14
-    let width: CGFloat = 140
-    let height: CGFloat = 150
+    let fontSize: CGFloat
+    let width: CGFloat
+    let height: CGFloat
     let message: String
-    let messageColor: Color = .gray
+    let messageColor: Color
     let imageSystemName: String
-    let imageColor: Color = .gray
-    let actSeconds: CGFloat = 1
+    let imageColor: Color
+    let actSeconds: CGFloat 
+
+    public init(
+        isShow: Binding<Bool>,
+        fontSize: CGFloat = 14,
+        width: CGFloat = 140,
+        height: CGFloat = 150,
+        message: String,
+        messageColor: Color = .gray,
+        imageSystemName: String,
+        imageColor: Color = .gray,
+        actSeconds: CGFloat = 1
+    ) {
+        _isShow = isShow
+        self.fontSize = fontSize
+        self.width = width
+        self.height = height
+        self.message = message
+        self.messageColor = messageColor
+        self.imageSystemName = imageSystemName
+        self.imageColor = imageColor
+        self.actSeconds = actSeconds
+    }
     
     public func body(content: Content) -> some View {
         content
