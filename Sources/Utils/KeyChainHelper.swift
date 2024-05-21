@@ -3,8 +3,8 @@
 
 import Foundation
 
-public class KeyChainHelper {
-    public static let shared = KeyChainHelper()
+public class iSKKeyChainHelper {
+    public static let shared = iSKKeyChainHelper()
     
     private init() {}
     
