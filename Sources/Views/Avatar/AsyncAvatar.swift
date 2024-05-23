@@ -22,14 +22,18 @@ public struct iSKAsyncAvatar: View {
         Group {
             if let u = url {
                 AsyncImage(url: URL(string: u)) { image in
-                    image.resizable()
+                    image
+                        .resizable()
+                        .scaledToFit()
                 } placeholder: {
                     Image(systemName: altImageSystemName)
                         .resizable()
+                        .scaledToFit()
                 }
             } else {
                 Image(systemName: altImageSystemName)
                     .resizable()
+                    .scaledToFit()
             }
         }
         .frame(width: size, height: size)
